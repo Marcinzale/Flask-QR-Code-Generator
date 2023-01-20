@@ -12,22 +12,30 @@
 </head>
 
 <body>
-    <div class="container bg-light my-5 pb-5 px-5 text-center justify-content-center w-50 shadow">
+    <div class="container-fluid bg-light my-5 pb-5 px-5 text-center justify-content-center w-50 shadow">
         <div class="title">
 
             <h1>QR Code Generator &#128293;</h1>
             <h4 class="mb-3">Insert link below to generate QR code</h4>
 
             <form action="/" method="POST">
-                <div class="container text-center">
-                    <div class="row">
+                <div class="container-fluid text-center">
+                    <div class="row container-fluid">
                         <div class="col-8"><input class="form-control" type="text" name="link" id="input_link">
                         </div>
-                        <div class="col-4"><button type="submit" class="btn btn-outline-dark">Generate code</button>
+                        <div class="col-4 container-fluid"><button type="submit"
+                                class="container-fluid btn btn-outline-dark">Generate
+                                code</button>
                         </div>
                     </div>
                 </div>
             </form>
+            {% if data %}
+            <div class="generated my-1">
+                <img class="img-fluid" src="{{data}}" alt="">
+                <p>Here is a generated QR code</p>
+            </div>
+            {%endif%}
 
         </div>
     </div>
